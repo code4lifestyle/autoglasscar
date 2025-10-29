@@ -451,7 +451,7 @@ const page = () => {
         >
           {reviews.map((card, i) => (
             <SwiperSlide key={i} className="flex! justify-center!">
-              <div className="w-full max-w-sm bg-gray-50 rounded-2xl pt-16 pb-8 px-6 text-center shadow-md transition-all duration-500 transform hover:-translate-y-3 hover:shadow-xl h-full flex flex-col items-center justify-between">
+              <div className="w-[50vh] sm:w-full max-w-sm bg-gray-50 rounded-2xl pt-16 pb-8 px-6 text-center shadow-md transition-all duration-500 transform hover:-translate-y-3 hover:shadow-xl h-full flex flex-col items-center justify-between">
                 {/* Profile Image */}
                 <div className="absolute -top-10 left-1/2 -translate-x-1/2 z-10">
                   <img

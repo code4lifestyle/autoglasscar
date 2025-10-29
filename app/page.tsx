@@ -245,9 +245,9 @@ const page = () => {
                 Chat Now for Quick Fix
               </a>
               <a href="#contact" className="scroll-smooth">
-              <button className="border border-[#3D3E42] text-[#3D3E42] hover:bg-[#53545a] hover:text-white font-semibold px-5 py-3 rounded-md shadow-md transition">
-                Book Now
-              </button>
+                <button className="border border-[#3D3E42] text-[#3D3E42] hover:bg-[#53545a] hover:text-white font-semibold px-5 py-3 rounded-md shadow-md transition">
+                  Book Now
+                </button>
               </a>
             </div>
 
@@ -435,44 +435,93 @@ const page = () => {
             have to say about our service.
           </p>
         </div>
-
-        {/* Swiper */}
-        <Swiper
-          modules={[Pagination]}
-          pagination={{ clickable: true }}
-          spaceBetween={60}
-          slidesPerView={1}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+        <div className="w-full flex justify-center py-0 relative">
+  <Swiper
+    modules={[Pagination]}
+    pagination={{ clickable: true }}
+    spaceBetween={20}
+    slidesPerGroup={1}
+    centeredSlides={false}
+    slidesOffsetBefore={0}
+    slidesOffsetAfter={0}
+    breakpoints={{
+      0: { slidesPerView: 1 },
+      640: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    }}
+    className="w-full max-w-6xl pb-12"
+    style={{
+      overflow: "hidden",
+      paddingTop: "3rem",
+      paddingBottom: "3.5rem",
+      minHeight: "480px", // keep Swiper tall so avatar visible
+    }}
+  >
+    {reviews.map((card, i) => (
+      <SwiperSlide
+        key={i}
+        className="flex justify-center"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "stretch",
+        }}
+      >
+        <div
+          className="bg-gray-50 rounded-2xl pt-16 pb-0 px-5 text-center shadow-md w-full max-w-xs relative transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+          style={{
+            minHeight: "280px",
+            maxHeight: "340px" // ✅ reduced card height
           }}
-          className="pb-12 overflow-visible!"
         >
-          {reviews.map((card, i) => (
-            <SwiperSlide key={i} className="flex! justify-center!">
-              <div className="w-[50vh] sm:w-full max-w-sm bg-gray-50 rounded-2xl pt-16 pb-8 px-6 text-center shadow-md transition-all duration-500 transform hover:-translate-y-3 hover:shadow-xl h-full flex flex-col items-center justify-between">
-                {/* Profile Image */}
-                <div className="absolute -top-10 left-1/2 -translate-x-1/2 z-10">
-                  <img
-                    src={card.img}
-                    alt={card.name}
-                    className="w-20 h-20 rounded-full border-4 border-gray-700 object-cover bg-white"
-                  />
-                </div>
-                <p className="text-sm mb-6 mt-2">"{card.review}"</p>
-                <h4 className="font-semibold">{card.name}</h4>
-                <p className="text-gray-500 text-sm mb-2">{card.location}</p>
-                <div className="flex items-center justify-center gap-1">
-                  <span className="text-yellow-400 font-bold text-lg">
-                    {card.rating}
-                  </span>
-                  <span className="text-yellow-400 text-xl">★</span>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          {/* Profile Image */}
+          <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 z-20">
+            <img
+              src={card.img}
+              alt={card.name}
+              className="w-20 h-20 rounded-full border-4 border-gray-700 object-cover bg-white"
+            />
+          </div>
+
+          <p className="text-sm my-4 leading-relaxed">"{card.review}"</p>
+          <h4 className="font-semibold mb-1">{card.name}</h4>
+          <p className="text-gray-500 text-sm mb-2">{card.location}</p>
+
+          <div className="flex justify-center items-center mt-2">
+            <span className="text-yellow-400 font-bold text-base">
+              {card.rating}
+            </span>
+            <span className="text-yellow-400 text-lg ml-1">★</span>
+          </div>
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+
+  {/* Scoped Global Styles */}
+  <style jsx global>{`
+    .swiper-pagination {
+      margin-top: 1rem !important;
+      text-align: center !important;
+    }
+
+    .swiper-pagination-bullet {
+      background: #d1d5db !important;
+      opacity: 1 !important;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #3D3E42  !important;
+      transform: scale(1.2);
+    }
+  `}</style>
+</div>
+
+        
+
+
+
       </section>
       {/* Contact Us  */}
 

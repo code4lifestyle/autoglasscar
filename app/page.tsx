@@ -494,7 +494,7 @@ const page = () => {
       >
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-black text-xl font-semibold">
+          <h2 className="text-black text-4xl font-semibold">
             What Our Customers Say
           </h2>
           <p className="text-gray-400 mt-2 text-sm tracking-wide uppercase">

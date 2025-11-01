@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const page = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   // inside  page component
   const [formData, setFormData] = useState({
     name: "",
@@ -173,26 +174,79 @@ const page = () => {
   return (
     <>
       {/* Navbar */}
-      <div className="w-full bg-white/90 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-5 px-6 flex justify-center items-center mb-5 sm:mb-0">
-        <ul className="menu-list flex flex-col sm:flex-row w-full sm:w-auto justify-center items-center gap-3 sm:gap-8 text-gray-800 font-medium">
-          {[
-            { name: "Home", href: "#home" },
-            { name: "Services", href: "#services" },
-            { name: "About", href: "#about" },
-            { name: "Reviews", href: "#reviews" },
-            { name: "Contact", href: "#contact" },
-          ].map((item, index) => (
-            <li key={index} className="w-full sm:w-auto">
-              <a
-                href={item.href}
-                className="block w-full text-center sm:w-auto px-4 py-3 sm:py-2 rounded-lg sm:rounded-full border border-gray-200 transition-all duration-300 ease-in-out cursor-pointer hover:border-gray-400 hover:bg-gray-100 hover:shadow-lg hover:-translate-y-1"
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {/* COLLAPSIBLE NAVBAR */}
+      <nav className="w-full bg-white/90 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-5 px-6">
+        <div className="flex justify-between items-center">
+          {/* Optional Logo */}
+          <div className="text-xl font-bold text-gray-800">AutoCar Glass</div>
+
+          {/* Desktop Menu */}
+          <ul className="hidden sm:flex flex-row gap-3 sm:gap-8 text-gray-800 font-medium">
+            {[
+              { name: "Home", href: "#home" },
+              { name: "Services", href: "#services" },
+              { name: "About", href: "#about" },
+              { name: "Reviews", href: "#reviews" },
+              { name: "Contact", href: "#contact" },
+            ].map((item, index) => (
+              <li key={index}>
+                <a
+                  href={item.href}
+                  className="block px-4 py-2 rounded-full border border-gray-200 transition-all duration-300 ease-in-out cursor-pointer hover:border-gray-400 hover:bg-gray-100 hover:shadow-lg hover:-translate-y-1"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="sm:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+          >
+            <svg
+              className="w-7 h-7 text-gray-800"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Menu (Collapsible) */}
+        <div
+          className={`sm:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <ul className="flex flex-col w-full bg-white border-t border-gray-200">
+            {[
+              { name: "Home", href: "#home" },
+              { name: "Services", href: "#services" },
+              { name: "About", href: "#about" },
+              { name: "Reviews", href: "#reviews" },
+              { name: "Contact", href: "#contact" },
+            ].map((item, index) => (
+              <li key={index} className="w-full border-b border-gray-100 last:border-b-0">
+                <a
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block w-full text-center py-4 text-gray-800 font-medium transition-all duration-200 hover:bg-gray-50 hover:text-blue-600"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
 
       {/* Hero sectioon  */}
       <div

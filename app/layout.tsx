@@ -9,6 +9,7 @@ const inter = Inter({
   display: "swap",
 });
 
+
 export const metadata = {
   title: "Auto Car WindScreen Ltd",
   description: "Fast, reliable Auto WindScreen repair service in Birmingham",

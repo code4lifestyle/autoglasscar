@@ -175,7 +175,7 @@ const page = () => {
     <>
       {/* Navbar */}
       {/* COLLAPSIBLE NAVBAR */}
-      <nav className="w-full bg-white/90 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-5 px-6">
+      <nav className="w-full sm:fixed sm:top-0 sm:left-0 sm:z-50 bg-white/90 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-5 px-6">
         <div className="flex justify-between items-center">
           {/* Optional Logo */}
           <div className="text-xl font-bold text-gray-800">AutoCar WindScreen </div>
@@ -264,7 +264,7 @@ const page = () => {
       {/* Hero sectioon  */}
       <div
         id="home"
-        className="bg-white  min-h-[87vh] mx-auto flex items-center justify-center px-5 sm:px-16 py-0"
+        className="bg-white  min-h-[87vh] mx-auto flex items-center justify-center px-5 sm:px-16 py-0 sm:pt-24"
       >
         <div className="max-w-full w-full grid md:grid-cols-2 gap-10 items-center">
           {/* LEFT CONTENT */}

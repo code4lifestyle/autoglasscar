@@ -276,7 +276,7 @@ const page = () => {
             </div>
 
             {/* Title */}
-            <h1 className="text-5xl font-extrabold leading-tight text-gray-900 mb-4">
+            <h1 className="text-[2rem] sm:text-5xl font-extrabold leading-tight text-gray-900 mb-4">
               Fast, Reliable <span className="">Auto WindScreen </span> Repair Service
             </h1>
 

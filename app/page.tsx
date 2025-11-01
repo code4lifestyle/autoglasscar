@@ -133,9 +133,9 @@ const page = () => {
       name: "Mike Thompson",
       location: "Solihull",
       review:
-        "Had a stone chip that turned into a crack overnight. AutoCar Glass fixed it the same day and it's been perfect ever since. The technician was knowledgeable and explained everything clearly.",
+        "Had a stone chip that turned into a crack overnight. AutoCar WindScreen  fixed it the same day and it's been perfect ever since. The technician was knowledgeable and explained everything clearly.",
       rating: "5.0",
-      img: "mike.png",
+      img: "Mike.png",
     },
     {
       name: "Emma Williams",
@@ -157,7 +157,7 @@ const page = () => {
       name: "Lisa Davis",
       location: "Dudley",
       review:
-        "Third time using AutoCar Glass over the years. Consistent quality, fair pricing, and always professional. They're my go-to for any auto glass needs.",
+        "Third time using AutoCar WindScreen  over the years. Consistent quality, fair pricing, and always professional. They're my go-to for any Auto WindScreen  needs.",
       rating: "5.0",
       img: "Lisa.png",
     },
@@ -178,7 +178,7 @@ const page = () => {
       <nav className="w-full bg-white/90 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-5 px-6">
         <div className="flex justify-between items-center">
           {/* Optional Logo */}
-          <div className="text-xl font-bold text-gray-800">AutoCar Glass</div>
+          <div className="text-xl font-bold text-gray-800">AutoCar WindScreen </div>
 
           {/* Desktop Menu */}
           <ul className="hidden sm:flex flex-row gap-3 sm:gap-8 text-gray-800 font-medium">
@@ -212,9 +212,19 @@ const page = () => {
               viewBox="0 0 24 24"
             >
               {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
@@ -234,7 +244,10 @@ const page = () => {
               { name: "Reviews", href: "#reviews" },
               { name: "Contact", href: "#contact" },
             ].map((item, index) => (
-              <li key={index} className="w-full border-b border-gray-100 last:border-b-0">
+              <li
+                key={index}
+                className="w-full border-b border-gray-100 last:border-b-0"
+              >
                 <a
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
@@ -264,7 +277,7 @@ const page = () => {
 
             {/* Title */}
             <h1 className="text-5xl font-extrabold leading-tight text-gray-900 mb-4">
-              Fast, Reliable <span className="">Auto Glass</span> Repair Service
+              Fast, Reliable <span className="">Auto WindScreen </span> Repair Service
             </h1>
 
             {/* Description */}
@@ -373,7 +386,7 @@ const page = () => {
             Our Services
           </h2>
           <p className="text-gray-600 mb-16 max-w-2xl mx-auto">
-            Fast, reliable auto glass repair services with expert technicians.
+            Fast, reliable Auto WindScreen  repair services with expert technicians.
             Quality service you can trust for all your windscreen needs.
           </p>
 
@@ -411,7 +424,7 @@ const page = () => {
         <div className="max-w-full mx-auto text-center">
           {/* Heading */}
           <h2 className="text-4xl font-bold text-gray-900 mb-12 mx-auto">
-            Why Choose AutoCar Glass Ltd?
+            Why Choose Auto Car WindScreen Ltd?
           </h2>
 
           {/* Features Grid */}
@@ -442,10 +455,10 @@ const page = () => {
           <div className="bg-gray-50 rounded-2xl p-10 shadow-md flex flex-col justify-between text-left h-full">
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                About AutoCar Glass Ltd
+                About Auto Car WindScreen Ltd
               </h1>
               <p className="text-gray-600 text-base mb-6 leading-relaxed">
-                Based in Birmingham, AutoCar Glass Ltd provides fast, reliable
+                Based in Birmingham, Auto Car WindScreen Ltd provides fast, reliable
                 windscreen repair and replacement using premium glass to suit
                 any budget. Our certified technicians offer same-day mobile
                 service across the region, backed by a lifetime guarantee for
@@ -490,92 +503,89 @@ const page = () => {
           </p>
         </div>
         <div className="w-full flex justify-center py-0 relative">
-  <Swiper
-    modules={[Pagination]}
-    pagination={{ clickable: true }}
-    spaceBetween={20}
-    slidesPerGroup={1}
-    centeredSlides={false}
-    slidesOffsetBefore={0}
-    slidesOffsetAfter={0}
-    breakpoints={{
-      0: { slidesPerView: 1 },
-      640: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
-    }}
-    className="w-full max-w-6xl pb-12"
-    style={{
-      overflow: "hidden",
-      paddingTop: "3rem",
-      paddingBottom: "3.5rem",
-      minHeight: "480px", // keep Swiper tall so avatar visible
-    }}
-  >
-    {reviews.map((card, i) => (
-      <SwiperSlide
-        key={i}
-        className="flex justify-center"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "stretch",
-        }}
-      >
-        <div
-          className="bg-gray-50 rounded-2xl pt-16 pb-0 px-5 text-center shadow-md w-full max-w-xs relative transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
-          style={{
-            minHeight: "280px",
-            maxHeight: "340px" // ✅ reduced card height
-          }}
-        >
-          {/* Profile Image */}
-          <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 z-20">
-            <img
-              src={card.img}
-              alt={card.name}
-              className="w-20 h-20 rounded-full border-4 border-gray-700 object-cover bg-white"
-            />
-          </div>
+          <Swiper
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            spaceBetween={20}
+            slidesPerGroup={1}
+            centeredSlides={false}
+            slidesOffsetBefore={0}
+            slidesOffsetAfter={0}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="w-full max-w-6xl pb-12"
+            style={{
+              overflow: "hidden",
+              paddingTop: "3rem",
+              paddingBottom: "3.5rem",
+              minHeight: "480px", // keep Swiper tall so avatar visible
+            }}
+          >
+            {reviews.map((card, i) => (
+              <SwiperSlide
+                key={i}
+                className="flex justify-center"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "stretch",
+                }}
+              >
+                <div
+                  className="bg-gray-50 rounded-2xl pt-16 pb-0 px-5 text-center shadow-md w-full max-w-xs relative transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  style={{
+                    minHeight: "280px",
+                    maxHeight: "340px", 
+                  }}
+                >
+                  {/* Profile Image */}
+                  <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 z-20">
+                    <img
+                      src={card.img}
+                      alt={card.name}
+                      className="w-20 h-20 rounded-full border-4 border-gray-700 object-cover bg-white"
+                    />
+                  </div>
 
-          <p className="text-sm my-4 leading-relaxed">"{card.review}"</p>
-          <h4 className="font-semibold mb-1">{card.name}</h4>
-          <p className="text-gray-500 text-sm mb-2">{card.location}</p>
+                  <p className="text-sm my-4 leading-relaxed">
+                    "{card.review}"
+                  </p>
+                  <h4 className="font-semibold mb-1">{card.name}</h4>
+                  <p className="text-gray-500 text-sm mb-2">{card.location}</p>
 
-          <div className="flex justify-center items-center mt-2">
-            <span className="text-yellow-400 font-bold text-base">
-              {card.rating}
-            </span>
-            <span className="text-yellow-400 text-lg ml-1">★</span>
-          </div>
+                  <div className="flex justify-center items-center mt-2">
+                    <span className="text-yellow-400 font-bold text-base">
+                      {card.rating}
+                    </span>
+                    <span className="text-yellow-400 text-lg ml-1">★</span>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Scoped Global Styles */}
+          <style jsx global>{`
+            .swiper-pagination {
+              margin-top: 1rem !important;
+              text-align: center !important;
+            }
+
+            .swiper-pagination-bullet {
+              background: #d1d5db !important;
+              opacity: 1 !important;
+              transition: background 0.3s ease, transform 0.3s ease;
+            }
+
+            .swiper-pagination-bullet-active {
+              background: #3d3e42 !important;
+              transform: scale(1.2);
+            }
+          `}</style>
         </div>
-      </SwiperSlide>
-    ))}
-  </Swiper>
-
-  {/* Scoped Global Styles */}
-  <style jsx global>{`
-    .swiper-pagination {
-      margin-top: 1rem !important;
-      text-align: center !important;
-    }
-
-    .swiper-pagination-bullet {
-      background: #d1d5db !important;
-      opacity: 1 !important;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-
-    .swiper-pagination-bullet-active {
-      background: #3D3E42  !important;
-      transform: scale(1.2);
-    }
-  `}</style>
-</div>
-
-        
-
-
-
       </section>
       {/* Contact Us  */}
 
@@ -636,12 +646,12 @@ const page = () => {
                 placeholder="Write your message..."
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#777981] focus:ring-1 focus:ring-[#777981] outline-none transition resize-none"
+                className="w-full px-4 py-3 border border-gray-300 focus:border-[#777981] focus:ring-1 focus:ring-[#777981] outline-none transition resize-none"
               ></textarea>
 
               <button
                 type="submit"
-                className="w-full bg-[#3D3E42] hover:bg-[#52545a] text-white font-semibold py-3 rounded-lg shadow-md transition-all duration-300"
+                className="w-full bg-[#3D3E42] hover:bg-[#52545a] text-white font-semibold py-3 shadow-md transition-all duration-300"
               >
                 Submit
               </button>
@@ -656,10 +666,10 @@ const page = () => {
           {/* Left Section (Logo and Description) */}
           <div className="md:w-1/2">
             <div className="text-3xl font-bold text-white mb-3">
-              AutoCar Glass Ltd
+              Auto Car WindScreen Ltd
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Fast, reliable auto glass repair - restore your view today.
+              Fast, reliable Auto WindScreen  repair - restore your view today.
               Quality service and expert technicians serving Birmingham and
               surrounding areas..
             </p>
@@ -672,7 +682,7 @@ const page = () => {
             </div>
             <p className="text-gray-400 text-sm mb-1">📞 07466 332215</p>
             <p className="text-gray-400 text-sm mb-1">
-              ✉️ info@autocarglass.co.uk
+              ✉️ info@AutoCarWindScreen .co.uk
             </p>
             <p className="text-gray-400 text-sm">
               📍 74 The Radleys B33 OQX Birmingham
@@ -682,7 +692,7 @@ const page = () => {
 
         {/* Bottom Line */}
         <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500 text-xs">
-          © {new Date().getFullYear()} AutoCar Glass Ltd. All rights reserved.
+          © {new Date().getFullYear()} Auto Car WindScreen Ltd. All rights reserved.
         </div>
       </div>
     </>

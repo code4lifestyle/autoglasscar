@@ -1,34 +1,24 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Inter } from "next/font/google";
+import type { ReactNode } from "react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// load Inter font
+const inter = Inter({
+  variable: "--inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "AutoCar Glass Ltd",
-  description: "this is a Autocar glass compny we do quility work",
+export const metadata = {
+  title: "Auto Car WindScreen Ltd",
+  description: "Fast, reliable Auto WindScreen repair service in Birmingham",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+// layout wrapper
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en" className={inter.className}>
+      <body className={`${inter.variable} antialiased`}>{children}</body>
     </html>
   );
 }

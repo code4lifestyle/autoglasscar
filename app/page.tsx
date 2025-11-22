@@ -682,7 +682,7 @@ const page = () => {
             </div>
             <p className="text-gray-400 text-sm mb-1">📞 07466 332215</p>
             <p className="text-gray-400 text-sm mb-1">
-              ✉️ info@AutoCarWindScreen .co.uk
+              ✉️ info@AutoCarWindScreen.co.uk
             </p>
             <p className="text-gray-400 text-sm">
               📍 74 The Radleys B33 OQX Birmingham

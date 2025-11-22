@@ -568,6 +568,7 @@ const page = () => {
           </Swiper>
 
           {/* Scoped Global Styles */}
+          {/* Scoped Global Styles */}
           <style jsx global>{`
             .swiper-pagination {
               margin-top: 1rem !important;
